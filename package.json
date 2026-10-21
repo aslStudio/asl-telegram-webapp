@@ -1,9 +1,17 @@
 {
   "name": "asl-telegram-webapp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Typed Telegram Mini App bridge and React hook",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aslStudio/asl-telegram-webapp.git"
+  },
+  "homepage": "https://github.com/aslStudio/asl-telegram-webapp#readme",
+  "bugs": {
+    "url": "https://github.com/aslStudio/asl-telegram-webapp/issues"
+  },
   "type": "module",
-  "license": "UNLICENSED",
+  "license": "asl",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
