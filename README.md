@@ -43,4 +43,15 @@ npm publish --access public
 
 Перед публикацией проверьте право на использование исходного кода и выберите лицензию. Сейчас в `package.json` указано `UNLICENSED`. Проверьте, что имя пакета доступно в npm; при необходимости измените `name` и заново выполните `npm install`. Для следующего релиза повысьте версию через `npm version patch`.
 
-Для GitHub создайте пустой репозиторий с таким же именем, затем добавьте его как `origin` и отправьте ветку: `git remote add origin <адрес>`, `git push -u origin main`.
+## GitHub и связь с npm
+
+Публикация в npm и отправка кода на GitHub выполняются отдельно. Этот проект уже содержит локальный Git-репозиторий и коммиты. Создайте на GitHub **пустой** репозиторий `asl-telegram-webapp` без автосоздания README, `.gitignore` или лицензии. Затем из каталога этого проекта выполните:
+
+```bash
+git remote add origin https://github.com/OWNER/asl-telegram-webapp.git
+git push -u origin main
+```
+
+Замените `OWNER` на свой username или организацию. Если `origin` уже существует, проверьте его командой `git remote -v` и при необходимости измените адрес через `git remote set-url origin <адрес>`.
+
+После создания репозитория добавьте его реальный адрес в поля `repository`, `homepage` и `bugs` файла `package.json`. Тогда npm сможет показывать ссылку на исходный код и страницу ошибок. В README GitHub можно добавить ссылку на [страницу пакета в npm](https://www.npmjs.com/package/asl-telegram-webapp). Эти метаданные попадут на npm после публикации новой версии; один только `git push` не меняет уже опубликованный пакет.
