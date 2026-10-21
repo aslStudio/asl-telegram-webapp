@@ -17,8 +17,9 @@
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts --external react",
     "test": "node --test tests/*.test.mjs",
-    "pack:check": "npm run build && npm pack --dry-run --cache ./node_modules/.cache/npm",
-    "pretest": "npm run build"
+    "pack:check": "npm pack --dry-run --cache ./node_modules/.cache/npm",
+    "pretest": "npm run build",
+    "prepack": "npm run build"
   },
   "peerDependencies": {
     "react": ">=18",
