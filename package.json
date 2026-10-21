@@ -1,0 +1,38 @@
+{
+  "name": "asl-telegram-webapp",
+  "version": "0.1.0",
+  "description": "Typed Telegram Mini App bridge and React hook",
+  "type": "module",
+  "license": "UNLICENSED",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --external react",
+    "test": "node --test tests/*.test.mjs",
+    "pack:check": "npm run build && npm pack --dry-run --cache ./node_modules/.cache/npm",
+    "pretest": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "@twa-dev/types": ">=8"
+  },
+  "devDependencies": {
+    "@twa-dev/types": "^8.0.2",
+    "@types/react": "^19.1.0",
+    "react": "^19.0.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.0",
+    "@types/node": "^22.15.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
